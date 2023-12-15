@@ -14,7 +14,7 @@ int main(){
     Rectangle nebularec{0.0, 0.0, nebula.width/8, nebula.height/8};
     Vector2 nebulapos{width,height-nebularec.height};
 
-    int nebulavel{-600};
+    int nebulavel{-500};
 
     Texture2D scarfy = LoadTexture("textures/scarfy.png");
     Rectangle scarfyrec;
@@ -30,6 +30,10 @@ int main(){
     int frame{0};
     const float updatetime= 1.0/12.0;
     float runningtime{};
+
+    int nebframe{0};
+    const float nebupdatetime= 1.0/12.0;
+    float nebrunningtime{};
 
     SetTargetFPS(60);
     while (!WindowShouldClose()){
@@ -62,14 +66,19 @@ int main(){
             runningtime=0.0;
             scarfyrec.x = frame*scarfyrec.width;
             frame++;
-            if(frame>5){
-                frame=0;
-            }
+            frame = frame%6;
         }
 
 
-        DrawTextureRec(nebula,nebularec,nebulapos,WHITE);
+        nebrunningtime+=dt;
+        if(nebrunningtime>=nebupdatetime){
+            nebrunningtime=0.0;
+            nebularec.x = nebframe*nebularec.width;
+            nebframe++;
+            nebframe = nebframe%8;
+        }
 
+        DrawTextureRec(nebula,nebularec,nebulapos,WHITE);
         
         DrawTextureRec(scarfy,scarfyrec,scarfypos,WHITE);
         
