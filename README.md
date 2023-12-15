@@ -1,6 +1,6 @@
 ## DAPPER-DASHER
 
-This is created using the Raylib Framework
+This game is created using the Raylib Framework
 
 To install Raylib:
 
