@@ -19,12 +19,12 @@ int main(){
     int velocity = 0;
     
     Texture2D nebula = LoadTexture("textures/12_nebula_spritesheet.png");
-    animdata nebdata{{0.0,0.0,nebula.width/8,nebula.height/8},{width,height-nebula.height/8},0,1.0/12.0,0.0};
+    animdata nebdata{{0.0,0.0,(float) nebula.width/8,(float) nebula.height/8},{width,(float) height-nebula.height/8},0,1.0/12.0,0.0};
 
     int nebulavel{-500};
 
     Texture2D scarfy = LoadTexture("textures/scarfy.png");
-    animdata scarfydata{{0.0,0.0,scarfy.width/6,scarfy.height},{width/5,height-scarfy.height},0,1.0/12.0,0.0};
+    animdata scarfydata{{0.0,0.0,(float) scarfy.width/6,(float) scarfy.height},{width/5,(float) height-scarfy.height},0,1.0/12.0,0.0};
 
 
 
