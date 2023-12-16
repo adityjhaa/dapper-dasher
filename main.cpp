@@ -53,7 +53,7 @@ int main(){
         };
     }
 
-    float finishline{nebulae[noofnebulae-1].pos.x + 400};
+    float finishline{nebulae[noofnebulae-1].pos.x};
 
     Texture2D background = LoadTexture("textures/far-buildings.png");
     float bgx{};
